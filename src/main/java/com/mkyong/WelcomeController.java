@@ -10,9 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class WelcomeController {
 
 	@Value("${welcome.message:test}")
-	private String message = "Hello world!";
+	private String message;
 	
-	@RequestMapping("/")
+	@RequestMapping("/hello")
 	public String welcome(Map<String, Object> model){
 		model.put("message", this.message);
 		return "welcome";
